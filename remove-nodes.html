@@ -24,6 +24,22 @@
 
           <h1>Remove nodes</h1>
 
+          <p>
+            The following source generates the list below.
+          </p>
+
+          <pre><code>&lt;ul class=&quot;list-group&quot;&gt;
+  &lt;li class=&quot;list-group-item&quot;&gt;Beijing&lt;/li&gt;
+  &lt;li class=&quot;list-group-item&quot;&gt;Tokyo&lt;/li&gt;
+  &lt;li class=&quot;list-group-item&quot;&gt;Moscow&lt;/li&gt;
+  &lt;li class=&quot;list-group-item&quot;&gt;Seoul&lt;/li&gt;
+  &lt;li class=&quot;list-group-item&quot;&gt;Jakarta&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+          <p>
+            Write a function that takes as an argument the given node and removes its children
+          </p>
+
           <ul class="list-group">
             <li class="list-group-item">Beijing</li>
             <li class="list-group-item">Tokyo</li>
@@ -38,7 +54,7 @@
 
     <script type="text/javascript">
 
-      var node; // replace with a selector to the ul
+      var node = document.querySelector(".list-group"); // replace with a selector to the ul
       removeChildNodes(node);
 
       /*
@@ -46,7 +62,9 @@
        *  child nodes and then returns the node.
        */
       function removeChildNodes(parentNode) {
-
+        while (parentNode.hasChildNodes()){
+          parentNode.removeChild(parentNode.firstChild);
+        }
       }
 
     </script>

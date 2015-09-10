@@ -20,6 +20,17 @@
 
     <div class="container">
       <div class="row">
+
+
+        <div class="col-sm-12">
+          <h1>Node map</h1>
+          <p>
+            Write a function that will select all the paragraph tags on a page and convert their text content to uppercase.
+          </p>
+
+        </div>
+      </div>
+      <div class="row">
         <div class="col-sm-8">
 
           <h1>Heading</h1>
@@ -27,6 +38,7 @@
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
+          <hr>
 
         </div>
 
@@ -67,12 +79,18 @@
 
     <script type="text/javascript">
 
+      capitalizeParagraphs();
+
       /*
        *  Write a function that when called will transform all the text within
        *  <p> tags to uppercase
        */
       function capitalizeParagraphs() {
-
+        var PTags = document.querySelectorAll("p")
+        for(var i = 0 ; i < PTags.length ; i++){
+          var p = PTags.item(i);
+          p.textContent = p.textContent.toUpperCase();
+        }
       }
 
     </script>
